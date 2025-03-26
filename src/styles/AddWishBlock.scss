@@ -1,0 +1,28 @@
+.add-wish-block {
+  max-width: 313px;
+  margin: 10% 20px 5%;
+  img {
+    position: relative;
+    bottom: 25%;
+    right: 15%;
+  }
+
+  p {
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #5c0101;
+    text-align: center;
+    span {
+      text-decoration: line-through;
+    }
+  }
+}
+
+@font-face {
+  font-family: "Comic Sans MS";
+  src: url(/assets/fonts/ComicSansMS3.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

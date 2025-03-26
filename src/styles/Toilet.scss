@@ -1,0 +1,106 @@
+.toilet-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 20% 20px 0;
+
+  .toilet {
+    width: 247px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .water-animation {
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    mix-blend-mode: multiply;
+    transform: translateX(-50%) scale(0);
+
+    &.animate {
+      animation: waterAnimation 2.5s forwards;
+    }
+
+    &.reverse {
+      animation: waterAnimationReverse 2.5s forwards;
+    }
+  }
+
+  .poo-animation {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+
+    &.animate {
+      animation: pooSlideAnimation 2.5s forwards;
+    }
+
+    &.reverse {
+      animation: pooSlideReverse 2.5s forwards;
+    }
+  }
+
+  @keyframes waterAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes waterAnimationReverse {
+    0% {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes pooSlideAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) scale(0) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.1) rotate(360deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1) rotate(360deg);
+    }
+  }
+
+  @keyframes pooSlideReverse {
+    0% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1) rotate(360deg);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.1) rotate(360deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) scale(0) rotate(0deg);
+    }
+  }
+}

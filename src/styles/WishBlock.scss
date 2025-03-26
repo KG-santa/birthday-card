@@ -1,0 +1,35 @@
+.wish-block {
+  max-width: 313px;
+  height: 500px;
+  margin: auto 20px;
+  display: flex;
+  flex-direction: column;
+
+  .wish-img {
+    width: 120px;
+    height: auto;
+    position: relative;
+    bottom: 20%;
+    right: 10%;
+  }
+
+  p {
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    margin-top: 10px;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 20px;
+    color: #5c0101;
+    text-align: center;
+    span {
+      text-decoration: line-through;
+    }
+  }
+}
+
+@font-face {
+  font-family: "Comic Sans MS";
+  src: url(/assets/fonts/ComicSansMS3.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
