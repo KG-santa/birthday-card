@@ -37,10 +37,10 @@ const Toilet: React.FC = () => {
   return (
     <div className="toilet-container">
       <div className="toilet">
-        <img src="../assets/imgs/toilet.svg" alt="Toilet Image" />
+        <img src="./assets/imgs/toilet.svg" alt="Toilet Image" />
 
         <img
-          src="../assets/imgs/water.svg"
+          src="./assets/imgs/water.svg"
           alt="Water"
           className={`water-animation ${
             pressCount === 0
@@ -53,7 +53,7 @@ const Toilet: React.FC = () => {
         />
 
         <img
-          src="../assets/imgs/poo.svg"
+          src="./assets/imgs/poo.svg"
           alt="Poo"
           className={`poo-animation ${
             pressCount === 0

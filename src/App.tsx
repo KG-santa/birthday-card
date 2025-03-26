@@ -10,7 +10,7 @@ import Schizo from "./components/Schizo";
 const App: React.FC = () => {
   return (
     <div className="container">
-      <Header title="Дорогая Даша!" imageUrl="../assets/imgs/bee.svg" />
+      <Header title="Дорогая Даша!" imageUrl="./assets/imgs/bee.svg" />
       <BoxBanner />
       <WishBlock />
       <Toilet />
@@ -18,7 +18,7 @@ const App: React.FC = () => {
       <Schizo />
       <Header
         title="Конец Поздравления"
-        imageUrl="../assets/imgs/bee.svg"
+        imageUrl="./assets/imgs/bee.svg"
         isTextFirst
         className="header-footer"
       />

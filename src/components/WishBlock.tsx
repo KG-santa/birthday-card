@@ -15,7 +15,7 @@ const WishBlock: React.FC = () => {
       </p>
       <p>Ну и самое главное: чтобы говно в унитазе всегда смывалось!</p>
       <img
-        src="../assets/imgs/happy.svg"
+        src="./assets/imgs/happy.svg"
         alt="Wish Image"
         className="wish-img"
       />

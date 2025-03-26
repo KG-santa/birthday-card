@@ -39,7 +39,7 @@ const Schizo: React.FC = () => {
       <div className={`schizo-container ${isFlipped ? "flipped" : ""}`}>
         <div className="front" onClick={handleToggleFlip}>
           <img
-            src="../assets/imgs/shizo-def.png"
+            src="./assets/imgs/shizo-def.png"
             alt="Default"
             className="shizo-img"
           />
@@ -51,7 +51,7 @@ const Schizo: React.FC = () => {
             onEnded={handleVideoEnd} // Reset on video end
             playsInline
             preload="auto"
-            src="../assets/video/shizoe.mp4"
+            src="./assets/video/shizoe.mp4"
             className="shizo-video"
           />
         </div>

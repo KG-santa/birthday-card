@@ -28,11 +28,11 @@ const SoundButton: React.FC<{
   return (
     <>
       <button onClick={handleClick} disabled={disabled} className="flush-btn">
-        <img src="../assets/imgs/flush-btn.png" alt="flush" />
+        <img src="./assets/imgs/flush-btn.png" alt="flush" />
       </button>
       <audio
         ref={setAudioElement}
-        src="../assets/audio/flush.mp3"
+        src="./assets/audio/flush.mp3"
         preload="auto"
       ></audio>
     </>
