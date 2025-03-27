@@ -1,20 +1,73 @@
+@font-face {
+  font-family: "Comic Sans MS";
+  src: url(/assets/fonts/ComicSansMS3.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .modal-overlay {
   z-index: 1000;
   position: fixed;
-  top: 0;
+  top: 20%;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  background: none;
 }
 
 .modal-content {
-  background: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 353px;
+  height: 306px;
+  background: #ffe9f5;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(191, 98, 148, 0.3);
   z-index: 1001; /* Ensure it is above the blur effect */
+  p,
+  h1 {
+    margin: 40px 0 0;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    color: #5c0101;
+  }
+  p {
+    margin-top: 20px;
+  }
+  .modal-head {
+    position: absolute;
+    right: 10%;
+    top: -16%;
+  }
+  .modal-kitty {
+    position: absolute;
+    top: 90%;
+  }
+  .modal-btn {
+    margin: 24px 0 40px;
+    width: 167px;
+    height: 52px;
+    border-radius: 50px;
+    background-color: rgba(255, 71, 226, 1);
+    border: none;
+    box-shadow: 0 1px 3px rgba(92, 1, 1, 0.25);
+
+    p {
+      margin: 12px 0;
+      line-height: 20px;
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    }
+  }
 }
