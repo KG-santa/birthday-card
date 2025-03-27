@@ -41,7 +41,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           className={`modal-text ${isOpen ? "slide-in-top" : "slide-out-top"}`}
         >
           <img
-            src="/assets/imgs/modal-head.svg"
+            src="./assets/imgs/modal-head.svg"
             alt="modal-head"
             className="modal-head"
           />
@@ -56,7 +56,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
         <img
-          src="/assets/imgs/modal-kitty.png"
+          src="./assets/imgs/modal-kitty.png"
           alt="modal-kitty"
           className={`modal-kitty ${
             isOpen ? "slide-in-bottom" : "slide-out-bottom"
