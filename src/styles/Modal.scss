@@ -30,19 +30,25 @@
   border-radius: 20px;
   box-shadow: 0 4px 16px rgba(191, 98, 148, 0.3);
   z-index: 1001; /* Ensure it is above the blur effect */
-  p,
-  h1 {
-    margin: 40px 0 0;
-    text-align: center;
-    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 25px;
-    color: #5c0101;
+  .modal-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p,
+    h1 {
+      margin: 40px 0 0;
+      text-align: center;
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 25px;
+      color: #5c0101;
+    }
+    p {
+      margin-top: 20px;
+    }
   }
-  p {
-    margin-top: 20px;
-  }
+
   .modal-head {
     position: absolute;
     right: 10%;
