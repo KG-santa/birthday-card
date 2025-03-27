@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Modal.scss";
 
 interface ModalProps {
@@ -7,6 +7,18 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; // Prevent scrolling
+    } else {
+      document.body.style.overflow = ""; // Allow scrolling
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Clean up on component unmount or when modal closes
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (

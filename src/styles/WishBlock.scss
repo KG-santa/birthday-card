@@ -22,7 +22,7 @@
     right: 10%;
     transition: transform 0.5s ease-in-out; /* Add transition for smooth effect */
     &.spinning {
-      animation: spin 1s linear infinite; /* Apply the spin animation */
+      animation: spin 1s linear; /* Apply the spin animation */
     }
   }
 

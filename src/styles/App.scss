@@ -8,6 +8,8 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(180deg, #ffdaee, #ffa0d4) repeat-y;
+  overflow-x: hidden;
+  touch-action: pan-y;
 }
 .container {
   max-width: 100%;
