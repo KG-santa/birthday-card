@@ -33,6 +33,11 @@
       img {
         width: 228px;
         border-radius: 50%;
+        transition: transform 0.6s;
+
+        &.rotating {
+          animation: rotate 0.6s ease-in-out; // Add the rotation animation
+        }
       }
     }
 
@@ -43,10 +48,20 @@
       background: #000;
       transform: rotateY(180deg); // Flips the back side so it aligns correctly
       border-radius: 50%;
+
       video {
         width: 228px;
         border-radius: 50%;
       }
     }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }

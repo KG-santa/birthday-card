@@ -4,6 +4,7 @@ import "../styles/Schizo.scss";
 const Schizo: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const lastTapRef = useRef<number | null>(null); // Track the last tap time
 
   const handleToggleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -31,10 +32,25 @@ const Schizo: React.FC = () => {
     setIsFlipped(false); // Reset to the image side when the video ends
   };
 
+  const handleVideoDoubleClick = () => {
+    handleToggleFlip(); // Flip the container on double-tap for the video
+  };
+
+  const handleTouch = (e: React.MouseEvent | React.TouchEvent) => {
+    const now = Date.now();
+    if (lastTapRef.current && now - lastTapRef.current < 300) {
+      // Double-tap detected
+      if (e.target === videoRef.current) {
+        handleVideoDoubleClick();
+      }
+    }
+    lastTapRef.current = now;
+  };
+
   return (
     <div
       className="shizo-wrapper"
-      onDoubleClick={handleToggleFlip} // Double-click to reset
+      onClick={handleTouch} // Handle touch gestures for double-tap
     >
       <div className={`schizo-container ${isFlipped ? "flipped" : ""}`}>
         <div className="front" onClick={handleToggleFlip}>

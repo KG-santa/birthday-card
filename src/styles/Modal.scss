@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "Comic Sans MS";
+  src: url(/assets/fonts/ComicSansMS3.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.modal-overlay {
+  z-index: 1000;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: none;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .modal-text {
+    width: 353px;
+    height: 306px;
+    background: #ffe9f5;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(191, 98, 148, 0.3);
+    z-index: 1001; /* Ensure it is above the blur effect */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p,
+    h1 {
+      margin: 40px 0 0;
+      text-align: center;
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 25px;
+      color: #5c0101;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+
+  .modal-head {
+    position: absolute;
+    right: 10%;
+    top: -16%;
+  }
+  .modal-kitty {
+    z-index: 1002;
+    position: absolute;
+    top: 85%;
+    right: 9%;
+  }
+  .modal-btn {
+    margin: 24px 0 40px;
+    width: 167px;
+    height: 52px;
+    border-radius: 50px;
+    background-color: rgba(255, 71, 226, 1);
+    border: none;
+    box-shadow: 0 1px 3px rgba(92, 1, 1, 0.25);
+
+    p {
+      margin: 12px 0;
+      line-height: 20px;
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    }
+  }
+}
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutTop {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutBottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-top {
+  animation: slideInTop 1s ease-out forwards;
+}
+
+.slide-out-top {
+  animation: slideOutTop 1s ease-in forwards;
+}
+
+.slide-in-bottom {
+  animation: slideInBottom 1s ease-out forwards;
+}
+
+.slide-out-bottom {
+  animation: slideOutBottom 1s ease-in forwards;
+}

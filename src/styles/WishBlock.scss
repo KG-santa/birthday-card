@@ -1,3 +1,12 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .wish-block {
   max-width: 313px;
   height: 500px;
@@ -11,6 +20,10 @@
     position: relative;
     bottom: 20%;
     right: 10%;
+    transition: transform 0.5s ease-in-out; /* Add transition for smooth effect */
+    &.spinning {
+      animation: spin 1s linear; /* Apply the spin animation */
+    }
   }
 
   p {
@@ -21,6 +34,7 @@
     font-size: 20px;
     color: #5c0101;
     text-align: center;
+
     span {
       text-decoration: line-through;
     }

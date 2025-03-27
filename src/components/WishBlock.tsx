@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/WishBlock.scss";
 
 const WishBlock: React.FC = () => {
+  const [isSpinning, setIsSpinning] = useState(false);
+
   return (
     <div className="wish-block">
       <p>
@@ -17,7 +19,8 @@ const WishBlock: React.FC = () => {
       <img
         src="./assets/imgs/happy.svg"
         alt="Wish Image"
-        className="wish-img"
+        className={`wish-img ${isSpinning ? "spinning" : ""}`}
+        onClick={() => setIsSpinning(!isSpinning)}
       />
     </div>
   );
