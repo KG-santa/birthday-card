@@ -12,6 +12,13 @@
     &.zooming {
       animation: zoomInOut 1s ease-in-out;
     }
+    &.spinX {
+      animation: spinX 1s ease-in-out;
+    }
+
+    &.rotateHalfBack {
+      animation: rotateHalfBack 1s ease-in-out;
+    }
   }
 
   &.header-footer {
@@ -62,5 +69,33 @@
   }
   50% {
     transform: scale(1.5);
+  }
+}
+// Keyframes for spinning on the X-axis
+@keyframes spinX {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+// Keyframes for rotating halfway and back
+@keyframes rotateHalfBack {
+  0% {
+    transform: rotate(0deg); /* Start at original position */
+  }
+  25% {
+    transform: rotate(-180deg) scale(1.1); /* Rotate 180 degrees clockwise */
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2); /* Rotate 180 degrees counterclockwise */
+  }
+  100% {
+    transform: rotate(0deg); /* End at original position */
   }
 }

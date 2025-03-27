@@ -14,30 +14,31 @@ const Header: React.FC<HeaderProps> = ({
   isTextFirst = false,
   className,
 }) => {
-  const [isZooming, setIsZooming] = useState(false);
+  const [currentAnimation, setCurrentAnimation] = useState("");
   const [isAnimating, setIsAnimating] = useState(false); // Track if animation is active
+  const [lastAnimation, setLastAnimation] = useState(""); // Track the last animation
 
   const handleImageClick = () => {
     if (isAnimating) return; // Ignore click if animation is active
 
-    const repeatCount = 3; // Number of times the animation should repeat
-    let count = 0;
+    const animations = ["zooming", "spinX", "rotateHalfBack"]; // Animation classes
+    let randomAnimation =
+      animations[Math.floor(Math.random() * animations.length)];
 
+    // Ensure the new animation is different from the last one
+    while (randomAnimation === lastAnimation) {
+      randomAnimation =
+        animations[Math.floor(Math.random() * animations.length)];
+    }
+
+    setLastAnimation(randomAnimation); // Update the last animation
+    setCurrentAnimation(randomAnimation); // Set the current animation
     setIsAnimating(true); // Mark animation as active
 
-    const intervalId = setInterval(() => {
-      setIsZooming(true);
-
-      setTimeout(() => {
-        setIsZooming(false);
-      }, 900); // Slightly less than the animation duration (1s)
-
-      count++;
-      if (count >= repeatCount) {
-        clearInterval(intervalId); // Stop the interval after the desired count
-        setIsAnimating(false); // Mark animation as inactive
-      }
-    }, 1000); // Matches the animation duration
+    setTimeout(() => {
+      setCurrentAnimation(""); // Remove animation class after animation ends
+      setIsAnimating(false); // Mark animation as inactive
+    }, 1000); // Match the animation duration
   };
 
   return (
@@ -50,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
       <img
         src={imageUrl}
         alt="Header Image"
-        className={`header-image ${isZooming ? "zooming" : ""}`}
+        className={`header-image ${currentAnimation}`}
         onClick={handleImageClick}
       />
       {!isTextFirst && title && (
