@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Modal.scss";
 
 interface ModalProps {
@@ -7,24 +7,39 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  const [animationState, setAnimationState] = useState(isOpen);
+
   useEffect(() => {
     if (isOpen) {
+      setAnimationState(true); // Trigger opening animation
       document.body.style.overflow = "hidden"; // Prevent scrolling
     } else {
       document.body.style.overflow = ""; // Allow scrolling
     }
 
     return () => {
-      document.body.style.overflow = ""; // Clean up on component unmount or when modal closes
+      document.body.style.overflow = ""; // Clean up on component unmount
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  const handleAnimationEnd = () => {
+    if (!isOpen) {
+      setAnimationState(false); // Remove from DOM after closing animation
+    }
+  };
+
+  if (!animationState) return null;
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-text">
+      <div
+        className={`modal-content ${isOpen ? "fade-in" : "fade-out"}`}
+        onClick={(e) => e.stopPropagation()}
+        onAnimationEnd={handleAnimationEnd}
+      >
+        <div
+          className={`modal-text ${isOpen ? "slide-in-top" : "slide-out-top"}`}
+        >
           <img
             src="/assets/imgs/modal-head.svg"
             alt="modal-head"
@@ -43,7 +58,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         <img
           src="/assets/imgs/modal-kitty.png"
           alt="modal-kitty"
-          className="modal-kitty"
+          className={`modal-kitty ${
+            isOpen ? "slide-in-bottom" : "slide-out-bottom"
+          }`}
         />
       </div>
     </div>
